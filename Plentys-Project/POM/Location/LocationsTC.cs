@@ -6,21 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.SignIn
+namespace Plentys_Project.POM.Location
 {
+ 
     [TestClass]
-    public class LoginTC: BaseClass
+    public class Locations : BaseClass
     {
         [TestMethod]
-        public void UserLogin()
+        public void Location()
         {
             Browsers("chrome");
-            OpenURL("https://www.plentys.pk/");
-            Login user = new Login();
-            user.LoginUser("ezaan.24khan@gmail.com", "Gamer@3123");
-
+            OpenURL("https://plentys.pk/");
+            LocationsTC location = new LocationsTC();
+            location.loc();
         }
-        
-
     }
 }

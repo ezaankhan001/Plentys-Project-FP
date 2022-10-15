@@ -67,12 +67,20 @@
     <Compile Include="BaseClass.cs" />
     <Compile Include="POM\AddToCart\AddToCart.cs" />
     <Compile Include="POM\AddToCart\AddToCartTC.cs" />
+    <Compile Include="POM\Location\Locations.cs" />
+    <Compile Include="POM\Location\LocationsTC.cs" />
+    <Compile Include="POM\Logout\Logout.cs" />
+    <Compile Include="POM\Logout\LogoutTC.cs" />
+    <Compile Include="POM\NewsLetter\SubscribeNewsLetter.cs" />
+    <Compile Include="POM\NewsLetter\SubscribeNewsLetterTC.cs" />
     <Compile Include="POM\Register\Register.cs" />
     <Compile Include="POM\Register\RegisterTC.cs" />
     <Compile Include="POM\Search\SearchBar.cs" />
     <Compile Include="POM\Search\SearchBarTC.cs" />
     <Compile Include="POM\SignIn\Login.cs" />
     <Compile Include="POM\SignIn\LoginTC.cs" />
+    <Compile Include="POM\SortBy\SortBy.cs" />
+    <Compile Include="POM\SortBy\SortByTC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,9 +99,11 @@
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.106.0.5249.6100\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.106.0.5249.6100\build\Selenium.WebDriver.ChromeDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.IEDriver.4.5.0\build\Selenium.WebDriver.IEDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.IEDriver.4.5.0\build\Selenium.WebDriver.IEDriver.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.31.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.31.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.MSEdgeDriver.106.0.1370.34\build\Selenium.WebDriver.MSEdgeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.MSEdgeDriver.106.0.1370.34\build\Selenium.WebDriver.MSEdgeDriver.targets'))" />
   </Target>
   <Import Project="..\packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\packages\MSTest.TestAdapter.2.2.7\build\net45\MSTest.TestAdapter.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.106.0.5249.6100\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.106.0.5249.6100\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.IEDriver.4.5.0\build\Selenium.WebDriver.IEDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.IEDriver.4.5.0\build\Selenium.WebDriver.IEDriver.targets')" />
   <Import Project="..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.31.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets" Condition="Exists('..\packages\Selenium.WebDriver.GeckoDriver.Win64.0.31.0\build\Selenium.WebDriver.GeckoDriver.Win64.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.MSEdgeDriver.106.0.1370.34\build\Selenium.WebDriver.MSEdgeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.MSEdgeDriver.106.0.1370.34\build\Selenium.WebDriver.MSEdgeDriver.targets')" />
 </Project>

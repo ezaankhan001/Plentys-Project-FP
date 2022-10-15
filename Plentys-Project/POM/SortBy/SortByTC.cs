@@ -3,24 +3,22 @@ using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.SignIn
+namespace Plentys_Project.POM.SortBy
 {
     [TestClass]
-    public class LoginTC: BaseClass
+    public class SortByTC: BaseClass
     {
         [TestMethod]
-        public void UserLogin()
+        public void SortBy()
         {
             Browsers("chrome");
-            OpenURL("https://www.plentys.pk/");
-            Login user = new Login();
-            user.LoginUser("ezaan.24khan@gmail.com", "Gamer@3123");
-
+            OpenURL("https://plentys.pk/");
+            SortBy sorting = new SortBy();
+            sorting.Sort();
         }
-        
-
     }
 }

@@ -5,22 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Plentys_Project.POM.SignIn;
 
-namespace Plentys_Project.POM.SignIn
+
+namespace Plentys_Project.POM.Logout
 {
     [TestClass]
-    public class LoginTC: BaseClass
+    public class LogoutTC: BaseClass
     {
-        [TestMethod]
-        public void UserLogin()
+    [TestMethod]
+    public void logoutUser()
         {
-            Browsers("chrome");
-            OpenURL("https://www.plentys.pk/");
+            Browsers("edge");
+            OpenURL("https://plentys.pk/");
             Login user = new Login();
             user.LoginUser("ezaan.24khan@gmail.com", "Gamer@3123");
-
+            Logout LOut = new Logout();
+            LOut.logout();
         }
-        
-
     }
 }

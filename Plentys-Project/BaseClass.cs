@@ -77,6 +77,10 @@ namespace Plentys_Project
         //    bool status = elem.Displayed
 
         //}
+        public static void PlayBackWait(int milliSeconds)
+        {
+            Thread.Sleep(milliSeconds);
+        }
         public void ReFreshPage()
         {
             driver.Navigate().Refresh();
@@ -115,12 +119,20 @@ namespace Plentys_Project
         {
             driver.Manage().Window.Maximize();
         }
+        public void CloseBrowser()
+        {
+            driver.Close();
+        }
+        public void QuitBrowser()
+        {
+            driver.Quit();
+        }
 
-        public void DropDown(By by, string value)
+        public void DropDown(By by, string text)
         {
             IWebElement drpDown = driver.FindElement(by);
             SelectElement dropDownMenu = new SelectElement(drpDown);
-            dropDownMenu.SelectByValue(value);
+            dropDownMenu.SelectByText(text);
         }
 
         private bool IsPageReady(IWebDriver driver)
