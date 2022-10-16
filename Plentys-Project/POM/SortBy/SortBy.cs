@@ -14,7 +14,7 @@ namespace Plentys_Project.POM.SortBy
     {
         By hamBurger = By.XPath("//*[@id='root']/header/div[2]/div[1]/button");
         By mobile = By.XPath("//li[@id='2']");
-        By sort = By.XPath("//select[@class='custom-select custom-select-sm']//parent::div");
+        By sort = By.XPath("//select[@class='custom-select custom-select-sm']");
 
 
         public void Sort()
