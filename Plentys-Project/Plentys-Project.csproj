@@ -454,6 +454,8 @@
     <Compile Include="ExtentReport.cs" />
     <Compile Include="POM\AddToCart\AddToCart.cs" />
     <Compile Include="POM\AddToCart\AddToCartTC.cs" />
+    <Compile Include="POM\Checkout\Checkout.cs" />
+    <Compile Include="POM\Checkout\CheckoutTC.cs" />
     <Compile Include="POM\Filters\Filters.cs" />
     <Compile Include="POM\Filters\FiltersTC.cs" />
     <Compile Include="POM\Location\Locations.cs" />
@@ -476,9 +478,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="POM\Checkout\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />

@@ -176,7 +176,7 @@ namespace Plentys_Project
         {
             driver.Url = url;
         }
-        //function for hoveing over an elemnent
+        //function for hovering over an elemnent
         public static void Hover(By by)
         {
             Actions actions = new Actions(driver);
