@@ -11,6 +11,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Interactions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AventStack.ExtentReports;
 
 namespace Plentys_Project
 {
@@ -56,27 +57,102 @@ namespace Plentys_Project
             return driver;
         }
 
+        public void Write(By by, string value)
+        {
+            try
+            {
+                driver.FindElement(by).SendKeys(value);
+                TakeScreenshot(Status.Pass, "Enter Text");
+            }
+            catch
+            {
+
+                TakeScreenshot(Status.Fail, "Entering Text Failed ");
+            }
+        }
+        public void WriteEnter(By by, string value)
+        {
+            try
+            {
+                driver.FindElement(by).SendKeys(value + Keys.Enter);
+                TakeScreenshot(Status.Pass, "Enter Text");
+            }
+            catch
+            {
+                TakeScreenshot(Status.Fail, "Entering Text Failed ");
+            }
+
+        }
+        public void WriteTab(By by, string value)
+        {
+            driver.FindElement(by).SendKeys(value + Keys.Tab);
+        }
+        public void Click(By by)
+        {
+            try
+            {
+                driver.FindElement(by).Click();
+                TakeScreenshot("Click Element");
+            }
+            catch (Exception)
+            {
+                TakeScreenshot(Status.Fail, "Element not Clicked");
+            }
+        }
+        public static void TakeScreenshot(string stepDetail)
+        {
+            string path = @"C:\Users\HP\source\repos\Plentys-Project\Plentys-Project\extentReport" + "TestExecLog_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            Screenshot image_username = ((ITakesScreenshot)driver).GetScreenshot();
+            image_username.SaveAsFile(path + ".png", ScreenshotImageFormat.Png);
+            ExtentReport.exChildTest.Log(Status.Pass, stepDetail, MediaEntityBuilder.CreateScreenCaptureFromPath(path + ".png").Build());
+        }
+        public static void TakeScreenshot(Status status, string stepDetail)
+        {
+            string path = @"C:\Users\HP\source\repos\Plentys-Project\Plentys-Project\extentReport" + "TestExecLog_" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            Screenshot image_username = ((ITakesScreenshot)driver).GetScreenshot();
+            image_username.SaveAsFile(path + ".png", ScreenshotImageFormat.Png);
+            ExtentReport.exChildTest.Log(status, stepDetail, MediaEntityBuilder.CreateScreenCaptureFromPath(path + ".png").Build());
+        }
+        public IWebElement WaitforElement(By by, int timeToReadyElement = 0)
+        {
+            IWebElement element = null;
+            try
+            {
+                if (timeToReadyElement != 0 && timeToReadyElement.ToString() != null)
+                {
+                    PlayBackWait(timeToReadyElement * 1000);
+                }
+                element = driver.FindElement(by);
+            }
+            catch
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+                wait.Until(driver => IsPageReady(driver) == true && IsElementVisible(by) == true && IsClickable(by) == true);
+                element = driver.FindElement(by);
+            }
+            return element;
+        }
+        public static void AssertAreEqualMethod(By by, string expect)
+        {
+            string actualText = driver.FindElement(by).Text;
+            Assert.AreEqual(expect, actualText);
+        }
+        public bool IsClickable(By by)
+        {
+            try
+            {
+                return true;
+            }
+            catch
+            {
+                return false;            }
+        }
+
         public IWebElement findElement(By by)
         {
             return driver.FindElement(by);
         }
-        //function for writing in any given field
-        public void Write(By by, String Value)
-        {
-            driver.FindElement(by).SendKeys(Value);
-        }
-        //function for clicking an element
-        public static void Click(By by)
-        {
-            driver.FindElement(by).Click();
-        }
-
-        //public void Assertion(By by)
-        //{
-        //    IWebElement elem = findElement(by);
-        //    bool status = elem.Displayed
-
-        //}
+       
         public static void PlayBackWait(int milliSeconds)
         {
             Thread.Sleep(milliSeconds);
