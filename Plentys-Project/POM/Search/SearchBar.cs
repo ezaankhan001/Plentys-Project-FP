@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.Search
+namespace Plentys_Project
 {
     public class SearchBar: BaseClass
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.SignIn
+namespace Plentys_Project
 {
     public class Login : BaseClass
     {

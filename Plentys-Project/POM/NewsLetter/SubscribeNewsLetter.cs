@@ -7,7 +7,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.NewsLetter
+namespace Plentys_Project
 {
     public class SubscribeNewsLetter : BaseClass
     {

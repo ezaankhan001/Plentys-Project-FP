@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.Location
+namespace Plentys_Project
 {
  
     [TestClass]
@@ -26,6 +26,11 @@ namespace Plentys_Project.POM.Location
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
+
         [TestMethod]
         public void Location()
         {

@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Plentys_Project.POM.SignIn;
 
 
-namespace Plentys_Project.POM.Logout
+namespace Plentys_Project
 {
     [TestClass]
     public class LogoutTC: BaseClass
@@ -27,6 +26,11 @@ namespace Plentys_Project.POM.Logout
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
+
         [TestMethod]
     public void logoutUser()
         {

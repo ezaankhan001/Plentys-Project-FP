@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.Filters
+namespace Plentys_Project
 {
     public class Filters: BaseClass
     {

@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Events;
 
-namespace Plentys_Project.POM.Register
+namespace Plentys_Project
 {
     [TestClass]
     public class RegisterTC: BaseClass
@@ -26,7 +26,12 @@ namespace Plentys_Project.POM.Register
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
-        
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
+
+
         [TestMethod]
         public void RegisterUserWithValidData()
         {
@@ -36,6 +41,7 @@ namespace Plentys_Project.POM.Register
             OpenURL("https://www.plentys.pk/");
             Register reg = new Register();
             reg.registration("Ezaan Khan", "ezaan.24khan@gmail.com", "3228494340", "Gamer@3123", "Gamer@3123", "23432");
+            QuitBrowser();
         }
 
         [TestMethod]

@@ -22,6 +22,7 @@ namespace Plentys_Project
             extentReports = new ExtentReports();
             dirpath = @"C:\Users\HP\source\repos\Plentys-Project\Plentys-Project\extentReport" + testcase + ".html";
             ExtentV3HtmlReporter htmlReporter = new ExtentV3HtmlReporter(dirpath);
+            //ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(dirpath);
             htmlReporter.Config.Theme = Theme.Dark;
             extentReports.AttachReporter(htmlReporter);
         }

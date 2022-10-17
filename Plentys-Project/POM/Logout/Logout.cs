@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.Logout
+namespace Plentys_Project
 {
     public class Logout: BaseClass
     {

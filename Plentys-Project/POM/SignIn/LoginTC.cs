@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.SignIn
+namespace Plentys_Project
 {
     [TestClass]
     public class LoginTC: BaseClass
@@ -25,6 +25,10 @@ namespace Plentys_Project.POM.SignIn
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
 
         [TestMethod]
         public void UserLoginWithValidData()
@@ -35,6 +39,7 @@ namespace Plentys_Project.POM.SignIn
             OpenURL("https://www.plentys.pk/");
             Login user = new Login();
             user.LoginUser("ezaan.24khan@gmail.com", "Gamer@3123");
+            QuitBrowser();
         }
 
         [TestMethod]

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.NewsLetter
+namespace Plentys_Project
 {
     [TestClass]
     public class SubscribeNewsLetterTC : BaseClass
@@ -25,6 +25,11 @@ namespace Plentys_Project.POM.NewsLetter
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
+
         [TestMethod]
         public void Newsletter()
         {

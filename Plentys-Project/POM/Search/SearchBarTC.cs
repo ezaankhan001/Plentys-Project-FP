@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.Search
+namespace Plentys_Project
 {
     [TestClass]
     public class SearchBarTC : BaseClass
@@ -25,7 +25,10 @@ namespace Plentys_Project.POM.Search
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
-
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
 
 
         [TestMethod]

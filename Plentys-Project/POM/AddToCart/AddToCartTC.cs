@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Plentys_Project.POM.AddToCart
+namespace Plentys_Project
 {
     [TestClass]
     public class AddToCartTC: BaseClass
@@ -26,6 +26,11 @@ namespace Plentys_Project.POM.AddToCart
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
+
         [TestMethod]
         public void AddProductToCart()
         {

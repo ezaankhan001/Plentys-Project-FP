@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using AventStack.ExtentReports;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Plentys_Project.POM.SortBy
+namespace Plentys_Project
 {
 
     [TestClass]
@@ -27,6 +28,10 @@ namespace Plentys_Project.POM.SortBy
             ExtentReport.LogReport("Sorting Functionality Report");
         }
         [ClassCleanup]
+        public static void ClassCleanUp()
+        {
+            ExtentReport.extentReports.Flush();
+        }
 
         [TestMethod]
         public void SortBy()

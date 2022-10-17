@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Plentys_Project.POM.Filters
+namespace Plentys_Project
 {
     [TestClass]
     public class FiltersTC : BaseClass
@@ -32,6 +32,7 @@ namespace Plentys_Project.POM.Filters
         {
             ExtentReport.extentReports.Flush();
         }
+
 
         [TestMethod]
         public void filters()

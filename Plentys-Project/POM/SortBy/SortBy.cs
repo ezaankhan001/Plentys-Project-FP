@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace Plentys_Project.POM.SortBy
+namespace Plentys_Project
 {
     public class SortBy:BaseClass
     {

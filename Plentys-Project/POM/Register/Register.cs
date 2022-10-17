@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Events;
 
-namespace Plentys_Project.POM.Register
+namespace Plentys_Project
 {
     public class Register : BaseClass
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Plentys_Project.POM.AddToCart
+namespace Plentys_Project
 {
     public class AddToCart : BaseClass
     {

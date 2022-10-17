@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace Plentys_Project.POM.Checkout
+namespace Plentys_Project
 {
     public class Checkout : BaseClass
     {

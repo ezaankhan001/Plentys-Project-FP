@@ -33,9 +33,6 @@ namespace Plentys_Project
                 chromeOption.AddArguments("disable-popup-blocking");
                 //chromeOption.AddArguments("headless");
                 driver = new ChromeDriver(chromeOption);
-
-
-                //driver = new ChromeDriver(chromeOption);
             }
             else if (browser == "edge")
             {
@@ -99,6 +96,7 @@ namespace Plentys_Project
                 TakeScreenshot(Status.Fail, "Element not Clicked");
             }
         }
+
         public static void TakeScreenshot(string stepDetail)
         {
             string path = @"C:\Users\HP\source\repos\Plentys-Project\Plentys-Project\extentReport" + "TestExecLog_" + DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -106,6 +104,7 @@ namespace Plentys_Project
             image_username.SaveAsFile(path + ".png", ScreenshotImageFormat.Png);
             ExtentReport.exChildTest.Log(Status.Pass, stepDetail, MediaEntityBuilder.CreateScreenCaptureFromPath(path + ".png").Build());
         }
+
         public static void TakeScreenshot(Status status, string stepDetail)
         {
             string path = @"C:\Users\HP\source\repos\Plentys-Project\Plentys-Project\extentReport" + "TestExecLog_" + DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -113,6 +112,7 @@ namespace Plentys_Project
             image_username.SaveAsFile(path + ".png", ScreenshotImageFormat.Png);
             ExtentReport.exChildTest.Log(status, stepDetail, MediaEntityBuilder.CreateScreenCaptureFromPath(path + ".png").Build());
         }
+
         public IWebElement WaitforElement(By by, int timeToReadyElement = 0)
         {
             IWebElement element = null;
@@ -161,6 +161,7 @@ namespace Plentys_Project
         {
             driver.Navigate().Refresh();
         }
+
         public bool IsElementVisible(By by)
         {
             return (findElement(by).Displayed || findElement(by).Enabled) ? true : false;
@@ -265,6 +266,10 @@ namespace Plentys_Project
         public void SwitchFrame(By by)
         {
             driver.SwitchTo().Frame(driver.FindElement(by));
+        }
+        public void AlertHandling()
+        {
+            driver.SwitchTo().Alert().Dismiss();
         }
         //
         //private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
