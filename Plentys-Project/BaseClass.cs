@@ -31,6 +31,7 @@ namespace Plentys_Project
                 chromeOption.AddArguments("start-maximized");
                 chromeOption.AddArguments("incognito");
                 chromeOption.AddArguments("disable-popup-blocking");
+                chromeOption.AddArguments("ignore-certificates-error");
                 //chromeOption.AddArguments("headless");
                 driver = new ChromeDriver(chromeOption);
             }
